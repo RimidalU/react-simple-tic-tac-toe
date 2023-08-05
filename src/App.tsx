@@ -1,3 +1,5 @@
+import Footer from "./components/Footer";
+
 function App() {
 	return (
 		<>
@@ -7,7 +9,7 @@ function App() {
 					<h2 className="text-3xl font-bold underline">Game-info</h2>
 				</article>
 			</main>
-			<footer>footer</footer>
+			<Footer />
 		</>
 	);
 }
