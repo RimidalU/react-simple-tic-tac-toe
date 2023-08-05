@@ -4,10 +4,10 @@ import Board from "./Board";
 
 import { initialGameState } from "../constants";
 import { getNewState, renderHeader } from "../helpers";
-import { gameState } from "../types";
+import { GameState } from "../types";
 
 function Game() {
-	const [state, setState] = useState<gameState>(initialGameState);
+	const [state, setState] = useState<GameState>(initialGameState);
 
 	const handleSetStep = (index: number) => {
 		const newState = getNewState(state, index);

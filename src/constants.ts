@@ -1,8 +1,8 @@
-import { SYMBOL } from "./types";
+import { StepSymbol } from "./types";
 
 export const GAME_SYMBOLS: {
-	SYMBOL_X: SYMBOL;
-	SYMBOL_0: SYMBOL;
+	SYMBOL_X: StepSymbol;
+	SYMBOL_0: StepSymbol;
 } = {
 	SYMBOL_X: "X",
 	SYMBOL_0: "0",

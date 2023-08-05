@@ -1,12 +1,12 @@
 import { getSymbolColor } from "../helpers";
-import { gameBoardField } from "../types";
+import { GameBoardField } from "../types";
 
 function Board({
 	fields,
 	handleSetStep,
 	stopGame,
 }: {
-	fields: gameBoardField[];
+	fields: GameBoardField[];
 	handleSetStep: (index: number) => void;
 	stopGame: boolean;
 }) {

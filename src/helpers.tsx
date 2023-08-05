@@ -1,7 +1,7 @@
 import { GAME_SYMBOLS } from "./constants";
-import { SYMBOL, gameBoardField, gameState } from "./types";
+import { StepSymbol, GameBoardField, GameState } from "./types";
 
-export const getSymbolColor = (symbol: SYMBOL) => {
+export const getSymbolColor = (symbol: StepSymbol) => {
 	if (symbol === GAME_SYMBOLS.SYMBOL_0) {
 		return "text-yellow-500";
 	}
@@ -11,7 +11,7 @@ export const getSymbolColor = (symbol: SYMBOL) => {
 	return "";
 };
 
-export const renderHeader = (isWin: SYMBOL | null, currentStep: SYMBOL) => {
+export const renderHeader = (isWin: StepSymbol | null, currentStep: StepSymbol) => {
 	if (isWin) {
 		return (
 			<h2 className="text-xl font-bold mb-4">
@@ -28,7 +28,7 @@ export const renderHeader = (isWin: SYMBOL | null, currentStep: SYMBOL) => {
 	);
 };
 
-export const checkWinner = (gameBoard: gameBoardField[]) => {
+export const checkWinner = (gameBoard: GameBoardField[]) => {
 	if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
 		return gameBoard[0];
 	}
@@ -58,7 +58,7 @@ export const checkWinner = (gameBoard: gameBoardField[]) => {
 	return null;
 };
 
-export const getNewState = (state: gameState, index: number) => {
+export const getNewState = (state: GameState, index: number) => {
 	const newState = { ...state };
 
 	newState.gameBoard[index] = state.currentStep;

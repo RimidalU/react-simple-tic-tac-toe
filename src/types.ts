@@ -1,10 +1,10 @@
-export type SYMBOL = "X" | "0";
+export type StepSymbol = "X" | "0";
 
-export type gameBoardField = SYMBOL | null;
+export type GameBoardField = StepSymbol | null;
 
-export type gameState = {
-	isWin: SYMBOL | null;
+export type GameState = {
+	isWin: StepSymbol | null;
 	stopGame: boolean;
-	currentStep: SYMBOL;
-	gameBoard: gameBoardField[];
+	currentStep: StepSymbol;
+	gameBoard: GameBoardField[];
 };
