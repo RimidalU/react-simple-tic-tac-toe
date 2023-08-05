@@ -9,6 +9,8 @@ export const GAME_SYMBOLS: {
 };
 
 export const initialGameState = {
+	isWin: null,
+	stopGame: false,
 	currentStep: GAME_SYMBOLS.SYMBOL_X,
 	gameBoard: [null, null, null, null, null, null, null, null, null],
 };
