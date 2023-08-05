@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Board from "./Board";
 
-import { initialGameState } from "../constants";
+import { gameBoard, initialGameState } from "../constants";
 import { getNewState, renderHeader } from "../helpers";
 import { GameState } from "../types";
 
@@ -14,10 +14,17 @@ function Game() {
 		setState(newState);
 	};
 
+	const handleReset = () => {
+		setState({ ...initialGameState, gameBoard: [...gameBoard] });
+	};
+
 	return (
-		<article className=" w-[200px] mx-auto p-3 border-2">
+		<article className="w-[200px] mx-auto p-3 border-2 text-center">
 			{renderHeader(state.isWin, state.currentStep)}
 			<Board fields={state.gameBoard} handleSetStep={handleSetStep} stopGame={state.stopGame} />
+			<button className="border-2 p-1 self-center" onClick={handleReset}>
+				Reset
+			</button>
 		</article>
 	);
 }

@@ -8,9 +8,11 @@ export const GAME_SYMBOLS: {
 	SYMBOL_0: "0",
 };
 
+export const gameBoard = [null, null, null, null, null, null, null, null, null];
+
 export const initialGameState = {
 	isWin: null,
 	stopGame: false,
 	currentStep: GAME_SYMBOLS.SYMBOL_X,
-	gameBoard: [null, null, null, null, null, null, null, null, null],
+	gameBoard: [...gameBoard],
 };

@@ -11,7 +11,7 @@ function Board({
 	stopGame: boolean;
 }) {
 	return (
-		<div className="grid border-2 grid-cols-[repeat(3,_minmax(50px,_1fr))] grid-rows-[repeat(3,_minmax(50px,_1fr))]">
+		<div className="grid border-2 grid-cols-[repeat(3,_minmax(50px,_1fr))] grid-rows-[repeat(3,_minmax(50px,_1fr))] mb-3">
 			{fields.map((field, index) => {
 				return (
 					<button
