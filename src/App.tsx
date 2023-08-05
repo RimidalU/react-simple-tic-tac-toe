@@ -1,13 +1,12 @@
 import Footer from "./components/Footer";
+import Game from "./components/Game";
 
 function App() {
 	return (
 		<>
 			<header>header</header>
 			<main>
-				<article>
-					<h2 className="text-3xl font-bold underline">Game-info</h2>
-				</article>
+				<Game />
 			</main>
 			<Footer />
 		</>
