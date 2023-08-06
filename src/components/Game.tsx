@@ -15,14 +15,26 @@ function Game() {
 	};
 
 	const handleReset = () => {
-		setState({ ...initialGameState, gameBoard: [...gameBoard] });
+		setState({
+			...initialGameState,
+			gameBoard: [...gameBoard],
+			highlightedFields: [],
+		});
 	};
 
 	return (
 		<article className="w-[200px] mx-auto p-3 border-2 text-center">
 			{renderHeader(state.isWin, state.currentStep)}
-			<Board fields={state.gameBoard} handleSetStep={handleSetStep} stopGame={state.stopGame} />
-			<button className="border-2 p-1 self-center" onClick={handleReset}>
+			<Board
+				fields={state.gameBoard}
+				handleSetStep={handleSetStep}
+				stopGame={state.stopGame}
+				highlightedFields={state.highlightedFields}
+			/>
+			<button
+				className={`border-2 p-1 self-center ${state.highlightedFields.length && "bg-red-500"}`}
+				onClick={handleReset}
+			>
 				Reset
 			</button>
 		</article>

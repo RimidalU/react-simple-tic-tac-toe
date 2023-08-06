@@ -7,4 +7,5 @@ export type GameState = {
 	stopGame: boolean;
 	currentStep: StepSymbol;
 	gameBoard: GameBoardField[];
+	highlightedFields: number[];
 };

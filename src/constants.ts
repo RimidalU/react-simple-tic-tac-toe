@@ -15,4 +15,5 @@ export const initialGameState = {
 	stopGame: false,
 	currentStep: GAME_SYMBOLS.SYMBOL_X,
 	gameBoard: [...gameBoard],
+	highlightedFields: [],
 };
