@@ -25,7 +25,7 @@
 
 ## Description
 
-SPA in React, TypeScript and Ant-Design for playing between two players in turn.
+SPA in React, TypeScript and TailwindCSS for playing between two players in turn.
 
 ## Project setup
 
