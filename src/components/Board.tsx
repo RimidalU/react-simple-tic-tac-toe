@@ -15,7 +15,7 @@ function Board({
 			{fields.map((field, index) => {
 				return (
 					<button
-						disabled={stopGame}
+						disabled={stopGame || field ? true : false}
 						key={index}
 						onClick={() => handleSetStep(index)}
 						className="w-full h-full border-2 text-center self-center"
