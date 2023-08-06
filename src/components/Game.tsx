@@ -32,7 +32,7 @@ function Game() {
 				highlightedFields={state.highlightedFields}
 			/>
 			<button
-				className={`border-2 p-1 self-center ${state.stopGame && "bg-red-500"}`}
+				className={`border-2 p-1 hover:border-red-500/50 self-center ${state.stopGame && "bg-red-500"}`}
 				onClick={handleReset}
 			>
 				Reset

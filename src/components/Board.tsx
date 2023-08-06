@@ -20,7 +20,7 @@ function Board({
 						disabled={stopGame || field ? true : false}
 						key={index}
 						onClick={() => handleSetStep(index)}
-						className={`w-full h-full border-2 text-center self-center  ${
+						className={`w-full h-full border-2 hover:border-red-500/50 text-center self-center  ${
 							highlightedFields.length && highlightedFields.includes(index) && "bg-red-500"
 						}`}
 					>

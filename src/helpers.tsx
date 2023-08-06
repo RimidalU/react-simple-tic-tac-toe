@@ -24,7 +24,7 @@ export const renderHeader = (
 					<span className="text-3xl ml-3">{stepNumber}</span>
 				</p>
 				<h2 className="text-xl font-bold mb-4">
-					Win <span className={`text-3xl ml-3 ${getSymbolColor(isWin)}`}>{isWin}</span>
+					Win: <span className={`text-3xl ml-3 ${getSymbolColor(isWin)}`}>{isWin}</span>
 				</h2>
 			</>
 		);
