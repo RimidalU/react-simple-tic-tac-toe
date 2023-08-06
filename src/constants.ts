@@ -11,6 +11,7 @@ export const GAME_SYMBOLS: {
 export const gameBoard = [null, null, null, null, null, null, null, null, null];
 
 export const initialGameState = {
+	stepNumber: 1,
 	isWin: null,
 	stopGame: false,
 	currentStep: GAME_SYMBOLS.SYMBOL_X,

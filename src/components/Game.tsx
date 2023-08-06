@@ -24,7 +24,7 @@ function Game() {
 
 	return (
 		<article className="w-[200px] mx-auto p-3 border-2 text-center">
-			{renderHeader(state.isWin, state.currentStep)}
+			{renderHeader(state.isWin, state.currentStep, state.stepNumber)}
 			<Board
 				fields={state.gameBoard}
 				handleSetStep={handleSetStep}
@@ -32,7 +32,7 @@ function Game() {
 				highlightedFields={state.highlightedFields}
 			/>
 			<button
-				className={`border-2 p-1 self-center ${state.highlightedFields.length && "bg-red-500"}`}
+				className={`border-2 p-1 self-center ${state.stopGame && "bg-red-500"}`}
 				onClick={handleReset}
 			>
 				Reset
