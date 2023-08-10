@@ -1,26 +1,10 @@
-import { useState } from "react";
-
+import { useGame } from "../lib/useGame";
 import Board from "./Board";
 
-import { gameBoard, initialGameState } from "../constants";
-import { getNewState, renderHeader } from "../helpers";
-import { GameState } from "../types";
+import { renderHeader } from "../helpers";
 
 function Game() {
-	const [state, setState] = useState<GameState>(initialGameState);
-
-	const handleSetStep = (index: number) => {
-		const newState = getNewState(state, index);
-		setState(newState);
-	};
-
-	const handleReset = () => {
-		setState({
-			...initialGameState,
-			gameBoard: [...gameBoard],
-			highlightedFields: [],
-		});
-	};
+	const { state, handleReset, handleSetStep } = useGame();
 
 	return (
 		<article className="w-[200px] mx-auto p-3 border-2 text-center">
