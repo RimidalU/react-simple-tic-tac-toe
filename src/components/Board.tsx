@@ -1,4 +1,5 @@
 import { GameBoardField } from "../types";
+import BoardTable from "./BoardTable";
 import Cell from "./Cell";
 
 function Board({
@@ -13,7 +14,7 @@ function Board({
 	highlightedFields: number[];
 }) {
 	return (
-		<div className="grid border-2 grid-cols-[repeat(3,_minmax(50px,_1fr))] grid-rows-[repeat(3,_minmax(50px,_1fr))] mb-3">
+		<BoardTable>
 			{fields.map((field, index) => {
 				return (
 					<Cell
@@ -26,7 +27,7 @@ function Board({
 					/>
 				);
 			})}
-		</div>
+		</BoardTable>
 	);
 }
 
