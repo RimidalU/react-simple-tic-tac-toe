@@ -1,12 +1,11 @@
 import Footer from "./components/Footer";
 import Game from "./components/Game";
+import Header from "./components/Header";
 
 function App() {
 	return (
 		<>
-			<header className="self-center text-xl bg-gradient-to-r from-red-500 via-blue-800 to-yellow-500 bg-clip-text text-transparent">
-				Classic tik tak toe for two users
-			</header>
+			<Header />
 			<main>
 				<Game />
 			</main>
