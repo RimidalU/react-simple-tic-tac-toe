@@ -1,5 +1,5 @@
-import { getSymbolColor } from "../helpers";
 import { GameBoardField } from "../types";
+import Cell from "./Cell";
 
 function Board({
 	fields,
@@ -16,16 +16,14 @@ function Board({
 		<div className="grid border-2 grid-cols-[repeat(3,_minmax(50px,_1fr))] grid-rows-[repeat(3,_minmax(50px,_1fr))] mb-3">
 			{fields.map((field, index) => {
 				return (
-					<button
-						disabled={stopGame || field ? true : false}
+					<Cell
 						key={index}
-						onClick={() => handleSetStep(index)}
-						className={`w-full h-full border-2 hover:border-red-500/50 text-center self-center  ${
-							highlightedFields.length && highlightedFields.includes(index) && "bg-red-500"
-						}`}
-					>
-						{field && <span className={`font-bold text-3xl ${getSymbolColor(field)}`}>{field}</span>}
-					</button>
+						index={index}
+						field={field}
+						handleSetStep={handleSetStep}
+						stopGame={stopGame}
+						highlightedFields={highlightedFields}
+					/>
 				);
 			})}
 		</div>
