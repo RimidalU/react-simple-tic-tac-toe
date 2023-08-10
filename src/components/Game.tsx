@@ -2,6 +2,7 @@ import { useGame } from "../lib/useGame";
 import Board from "./Board";
 
 import { renderHeader } from "../helpers";
+import ResetButton from "./ResetButton";
 
 function Game() {
 	const { state, handleReset, handleSetStep } = useGame();
@@ -15,12 +16,7 @@ function Game() {
 				stopGame={state.stopGame}
 				highlightedFields={state.highlightedFields}
 			/>
-			<button
-				className={`border-2 p-1 hover:border-red-500/50 self-center ${state.stopGame && "bg-red-500"}`}
-				onClick={handleReset}
-			>
-				Reset
-			</button>
+			<ResetButton state={state} handleReset={handleReset} />
 		</article>
 	);
 }
