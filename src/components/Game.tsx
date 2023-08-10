@@ -3,12 +3,14 @@ import Board from "./Board";
 
 import { renderHeader } from "../helpers";
 import ResetButton from "./ResetButton";
+import GameStep from "./GameStep";
 
 function Game() {
 	const { state, handleReset, handleSetStep } = useGame();
 
 	return (
 		<article className="w-[200px] mx-auto p-3 border-2 text-center">
+			<GameStep stepNumber={state.stepNumber} />
 			{renderHeader(state.isWin, state.currentStep, state.stepNumber)}
 			<Board
 				fields={state.gameBoard}

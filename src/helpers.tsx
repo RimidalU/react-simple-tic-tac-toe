@@ -1,5 +1,7 @@
-import { GAME_SYMBOLS } from "./constants";
+import GameStatus from "./components/GameStatus";
+
 import { StepSymbol, GameBoardField, GameState } from "./types";
+import { GAME_SYMBOLS } from "./constants";
 
 export const getSymbolColor = (symbol: StepSymbol) => {
 	if (symbol === GAME_SYMBOLS.SYMBOL_0) {
@@ -17,40 +19,14 @@ export const renderHeader = (
 	stepNumber: number
 ) => {
 	if (isWin) {
-		return (
-			<>
-				<p className="text-xl font-bold mb-4">
-					Step:{""}
-					<span className="text-3xl ml-3">{stepNumber}</span>
-				</p>
-				<h2 className="text-xl font-bold mb-4">
-					Win: <span className={`text-3xl ml-3 ${getSymbolColor(isWin)}`}>{isWin}</span>
-				</h2>
-			</>
-		);
+		return <GameStatus title="Win: " symbol={isWin} />;
 	}
 
 	if (stepNumber === 10) {
-		return (
-			<>
-				<p className="text-3xl font-bold mb-4">Dead Heat!</p>
-				<h2 className="text-3xl font-bold mb-4">X - 0</h2>
-			</>
-		);
+		return <GameStatus title="Dead Heat!" />;
 	}
 
-	return (
-		<>
-			<p className="text-xl font-bold mb-4">
-				Step:{""}
-				<span className="text-3xl ml-3">{stepNumber}</span>
-			</p>
-			<p className="text-xl font-bold mb-4">
-				Next step:{""}
-				<span className={`text-3xl ml-3 ${getSymbolColor(currentStep)}`}>{currentStep}</span>
-			</p>
-		</>
-	);
+	return <GameStatus title="Next step:" symbol={currentStep} />;
 };
 
 export const checkWinner = (gameBoard: GameBoardField[]) => {
